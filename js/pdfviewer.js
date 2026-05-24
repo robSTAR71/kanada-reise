@@ -26,30 +26,37 @@ export function openPDF(filePath, label) {
   const dl    = dlg.querySelector('#pdf-download');
 
   title.textContent = label || filePath;
+  const isImage = /\.(jpg|jpeg|png|gif|webp)$/i.test(filePath);
 
-  // Try cached version first
+  // Switch between image and iframe display
+  frame.style.display = isImage ? 'none' : 'block';
+  let imgEl = dlg.querySelector('#pdf-img');
+  if (!imgEl) {
+    imgEl = document.createElement('img');
+    imgEl.id = 'pdf-img';
+    imgEl.alt = 'Reisepass';
+    imgEl.style.cssText = 'flex:1;width:100%;object-fit:contain;background:#111;';
+    frame.parentNode.insertBefore(imgEl, frame.nextSibling);
+  }
+  imgEl.style.display = isImage ? 'block' : 'none';
+
+  function applyUrl(url) {
+    if (isImage) { imgEl.src = url; }
+    else { frame.src = url; }
+    dl.href = url;
+    dl.download = filePath.split('/').pop();
+  }
+
   if ('caches' in window) {
     caches.match(filePath).then(response => {
       if (response) {
-        response.blob().then(blob => {
-          const url = URL.createObjectURL(blob);
-          frame.src = url;
-          dl.href = url;
-          dl.download = filePath.split('/').pop();
-        });
+        response.blob().then(blob => applyUrl(URL.createObjectURL(blob)));
       } else {
-        frame.src = filePath;
-        dl.href = filePath;
-        dl.download = filePath.split('/').pop();
+        applyUrl(filePath);
       }
-    }).catch(() => {
-      frame.src = filePath;
-      dl.href = filePath;
-    });
+    }).catch(() => applyUrl(filePath));
   } else {
-    frame.src = filePath;
-    dl.href = filePath;
-    dl.download = filePath.split('/').pop();
+    applyUrl(filePath);
   }
 
   dlg.showModal();

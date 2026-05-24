@@ -7,7 +7,8 @@
       "Bash(cp \"booking.woodstock.pdf\" \"docs/hotel-woodstock.pdf\")",
       "Bash(cp \"booking.pinecone.pdf\" \"docs/hotel-pinecone.pdf\")",
       "mcp__Claude_Preview__preview_start",
-      "PowerShell(\\(Get-Command npx -ErrorAction SilentlyContinue\\).Source; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)"
+      "PowerShell(\\(Get-Command npx -ErrorAction SilentlyContinue\\).Source; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)",
+      "Bash(ls \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\\\\pass\"* 2>/dev/null || ls \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\\\\\" | grep -i pass)"
     ]
   }
 }

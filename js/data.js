@@ -182,6 +182,9 @@ export const TRIP = {
     { id: "eta-robert", label: "eTA Robert Preinfalk",   icon: "🛂", file: "docs/eta-robert.pdf" },
     { id: "eta-edith",  label: "eTA Edith Preinfalk",    icon: "🛂", file: "docs/eta-edith.pdf" },
     { id: "eta-pia",    label: "eTA Pia Preinfalk",      icon: "🛂", file: "docs/eta-pia.pdf" },
+    { id: "pass-robert", label: "Reisepass Robert",      icon: "🪪", file: "docs/pass-robert.jpg" },
+    { id: "pass-edith",  label: "Reisepass Edith",       icon: "🪪", file: "docs/pass-edith.jpg" },
+    { id: "pass-pia",    label: "Reisepass Pia",         icon: "🪪", file: "docs/pass-pia.jpg" },
   ],
 
   days: [

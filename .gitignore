@@ -2,11 +2,11 @@
 *.pdf
 !docs/*.pdf
 
-# Bilder (persönlich, nicht im Repo)
-*.jpg
-*.jpeg
-*.png
-*.JPG
+# Bilder im Root (persönlich, nicht im Repo)
+/*.jpg
+/*.jpeg
+/*.png
+/*.JPG
 
 # System
 .DS_Store
