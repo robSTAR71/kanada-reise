@@ -13,7 +13,10 @@
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\" | Where-Object { $_.LastWriteTime -gt \\(Get-Date\\).AddHours\\(-3\\) } | Select-Object Name, Length, LastWriteTime)",
       "Bash(powershell -Command ' *)",
       "Bash(cd /tmp)",
-      "Bash(python3)"
+      "Bash(python3)",
+      "Bash(python)",
+      "Bash(pip install *)",
+      "PowerShell(pip install pdfplumber pypdf -q)"
     ]
   }
 }
