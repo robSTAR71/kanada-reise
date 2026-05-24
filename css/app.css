@@ -245,6 +245,37 @@ nav.bottom-nav {
 .install-list { margin: 12px 0; padding-left: 0; display: flex; flex-direction: column; gap: 8px; }
 .install-list li { font-size: 14px; padding-left: 4px; }
 
+/* ── Weather ───────────────────────────────────────────────────────────── */
+.view-weather { padding-bottom: 24px; }
+.weather-body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+
+.weather-selector { padding: 16px; }
+.weather-selector-label { display: block; font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.weather-select { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 15px; font-family: var(--font-b); background: #fff; color: var(--text); appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+
+.weather-current { padding: 24px 20px; text-align: center; }
+.wc-location { font-size: 13px; color: var(--text-2); margin-bottom: 12px; }
+.wc-main { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.wc-icon { font-size: 56px; line-height: 1; }
+.wc-temp { font-size: 56px; font-weight: 700; font-family: var(--font-h); color: var(--navy); line-height: 1; }
+.wc-label { font-size: 17px; color: var(--text-2); margin-top: 8px; }
+.wc-details { display: flex; justify-content: center; gap: 20px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); flex-wrap: wrap; }
+.wc-detail { font-size: 13px; color: var(--text-2); display: flex; gap: 4px; align-items: center; }
+
+.weather-loading { padding: 40px; text-align: center; color: var(--text-2); font-size: 15px; }
+.weather-error { padding: 24px; text-align: center; color: #c0392b; line-height: 1.6; }
+
+.weather-forecast { padding: 16px 20px; }
+.forecast-title { font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.forecast-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.forecast-day { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 2px; border-radius: 8px; background: var(--surface); }
+.fc-day { font-size: 11px; font-weight: 600; color: var(--text-2); }
+.fc-icon { font-size: 20px; }
+.fc-temps { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.fc-max { font-size: 13px; font-weight: 700; color: var(--navy); }
+.fc-min { font-size: 11px; color: var(--text-2); }
+.fc-rain { font-size: 10px; color: #2980b9; min-height: 14px; }
+
 /* ── PDF Dialog ────────────────────────────────────────────────────────── */
 dialog#pdf-dialog {
   border: none;

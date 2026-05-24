@@ -1,6 +1,7 @@
 import { TRIP } from './data.js';
 import { renderCountdown } from './countdown.js';
 import { openPDF } from './pdfviewer.js';
+import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js';
 
 const DAY_ICONS = {
   flight:  '✈️',
@@ -190,6 +191,93 @@ export function renderDocuments() {
   });
 
   el.appendChild(list);
+  return el;
+}
+
+// ── Weather ───────────────────────────────────────────────────────────────────
+
+const DAYS_SHORT = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+
+export function renderWeather() {
+  const el = document.createElement('div');
+  el.className = 'view-weather';
+  el.innerHTML = `
+    <div class="view-header">
+      <h1>Wetter</h1>
+      <p class="view-sub">Live-Daten — benötigt Internetverbindung</p>
+    </div>
+    <div class="weather-body"></div>`;
+
+  const body = el.querySelector('.weather-body');
+
+  // Selector for all accommodations
+  const selectorHtml = `
+    <div class="weather-selector card">
+      <label class="weather-selector-label" for="acc-select">Ort wählen</label>
+      <select id="acc-select" class="weather-select">
+        ${TRIP.accommodations.map(a => `<option value="${a.id}">${a.name} — ${a.city}</option>`).join('')}
+      </select>
+    </div>`;
+
+  const currentCard = `<div id="weather-current" class="weather-current card"><div class="weather-loading">⏳ Lade Wetterdaten…</div></div>`;
+  const forecastCard = `<div id="weather-forecast" class="weather-forecast card"></div>`;
+
+  body.innerHTML = selectorHtml + currentCard + forecastCard;
+
+  const select = body.querySelector('#acc-select');
+
+  // Pre-select current/upcoming accommodation
+  const current = currentAccommodation();
+  if (current) select.value = current.id;
+
+  function load(accId) {
+    const acc = TRIP.accommodations.find(a => a.id === accId);
+    if (!acc) return;
+    const cur  = body.querySelector('#weather-current');
+    const fore = body.querySelector('#weather-forecast');
+    cur.innerHTML  = '<div class="weather-loading">⏳ Lade Wetterdaten…</div>';
+    fore.innerHTML = '';
+
+    fetchWeather(acc.lat, acc.lon).then(data => {
+      const c = data.current;
+      const d = data.daily;
+      const wc = wmoInfo(c.weathercode);
+
+      cur.innerHTML = `
+        <div class="wc-location">📍 ${acc.name}</div>
+        <div class="wc-main">
+          <span class="wc-icon">${wc.icon}</span>
+          <span class="wc-temp">${Math.round(c.temperature_2m)}°C</span>
+        </div>
+        <div class="wc-label">${wc.label}</div>
+        <div class="wc-details">
+          <div class="wc-detail"><span>🌡️</span> Gefühlt ${Math.round(c.apparent_temperature)}°C</div>
+          <div class="wc-detail"><span>💧</span> Luftfeuchtigkeit ${c.relative_humidity_2m}%</div>
+          <div class="wc-detail"><span>💨</span> Wind ${Math.round(c.wind_speed_10m)} km/h</div>
+        </div>`;
+
+      const days = d.time.map((date, i) => {
+        const dt = new Date(date + 'T00:00:00');
+        const wi = wmoInfo(d.weathercode[i]);
+        return `
+          <div class="forecast-day">
+            <div class="fc-day">${DAYS_SHORT[dt.getDay()]}</div>
+            <div class="fc-icon">${wi.icon}</div>
+            <div class="fc-temps"><span class="fc-max">${Math.round(d.temperature_2m_max[i])}°</span><span class="fc-min">${Math.round(d.temperature_2m_min[i])}°</span></div>
+            <div class="fc-rain">${d.precipitation_sum[i] > 0 ? `🌧 ${d.precipitation_sum[i]}mm` : ''}</div>
+          </div>`;
+      }).join('');
+
+      fore.innerHTML = `<div class="forecast-title">7-Tage-Vorschau</div><div class="forecast-grid">${days}</div>`;
+
+    }).catch(err => {
+      cur.innerHTML = `<div class="weather-error">⚠️ ${err.message}<br><small>Bitte Internetverbindung prüfen.</small></div>`;
+    });
+  }
+
+  select.addEventListener('change', e => load(e.target.value));
+  load(select.value);
+
   return el;
 }
 
