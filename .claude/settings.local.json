@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p css js docs fonts icons images)",
+      "Bash(cp \"booking.montreal.pdf\" \"docs/hotel-montreal.pdf\")",
+      "Bash(cp \"booking.quebec.pdf\" \"docs/hotel-quebec.pdf\")",
+      "Bash(cp \"booking.woodstock.pdf\" \"docs/hotel-woodstock.pdf\")",
+      "Bash(cp \"booking.pinecone.pdf\" \"docs/hotel-pinecone.pdf\")",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(\\(Get-Command npx -ErrorAction SilentlyContinue\\).Source; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)"
+    ]
+  }
+}

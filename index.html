@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kanada 2026</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a3a5c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kanada">
+
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- Install banner (hidden until beforeinstallprompt fires) -->
+  <div id="install-banner" hidden>
+    <p>🍁 Als App installieren — dann offline verfügbar!</p>
+    <button id="install-btn" class="btn btn-primary btn-sm">Installieren</button>
+    <button id="install-dismiss" class="btn btn-ghost btn-sm">✕</button>
+  </div>
+
+  <!-- Main content area -->
+  <main id="main" role="main" aria-live="polite"></main>
+
+  <!-- Bottom navigation -->
+  <nav class="bottom-nav" role="navigation" aria-label="Hauptnavigation">
+    <button class="nav-item active" data-view="home" aria-label="Start">
+      <span class="nav-icon">🏠</span>
+      <span>Start</span>
+    </button>
+    <button class="nav-item" data-view="reise" aria-label="Reiseverlauf">
+      <span class="nav-icon">🗓️</span>
+      <span>Reise</span>
+    </button>
+    <button class="nav-item" data-view="unterkuenfte" aria-label="Unterkünfte">
+      <span class="nav-icon">🏨</span>
+      <span>Hotels</span>
+    </button>
+    <button class="nav-item" data-view="dokumente" aria-label="Dokumente">
+      <span class="nav-icon">📄</span>
+      <span>Docs</span>
+    </button>
+    <button class="nav-item" data-view="info" aria-label="Info">
+      <span class="nav-icon">ℹ️</span>
+      <span>Info</span>
+    </button>
+  </nav>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Original PDFs in root (kopiert nach docs/)
+*.pdf
+!docs/*.pdf
+
+# Bilder (persönlich, nicht im Repo)
+*.jpg
+*.jpeg
+*.png
+*.JPG
+
+# System
+.DS_Store
+Thumbs.db
