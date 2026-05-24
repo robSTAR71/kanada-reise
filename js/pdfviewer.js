@@ -6,11 +6,11 @@ function ensureDialog() {
   dialog.id = 'pdf-dialog';
   dialog.innerHTML = `
     <div class="pdf-dialog-header">
+      <button id="pdf-close" class="pdf-back-btn" aria-label="Schließen">
+        <span class="pdf-back-arrow">←</span> Zurück
+      </button>
       <span id="pdf-dialog-title" class="pdf-dialog-name"></span>
-      <div class="pdf-dialog-actions">
-        <a id="pdf-download" class="btn btn-ghost" download>↓ Herunterladen</a>
-        <button id="pdf-close" class="btn btn-ghost" aria-label="Schließen">✕</button>
-      </div>
+      <a id="pdf-download" class="pdf-dl-btn" download title="Herunterladen">↓</a>
     </div>
     <iframe id="pdf-frame" title="Dokument"></iframe>`;
   document.body.appendChild(dialog);

@@ -1,4 +1,4 @@
-import { TRIP } from './data.js';
+import { TRIP } from './data.js?v=4';
 
 const departure = new Date(TRIP.meta.departureISO);
 const returnDate = new Date(TRIP.meta.returnISO);

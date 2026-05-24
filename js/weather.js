@@ -39,7 +39,7 @@ export async function fetchWeather(lat, lon) {
 }
 
 // Which accommodation is "current" based on today's date (or next upcoming)
-import { TRIP } from './data.js';
+import { TRIP } from './data.js?v=4';
 
 export function currentAccommodation() {
   const today = new Date().toISOString().slice(0, 10);

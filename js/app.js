@@ -1,4 +1,4 @@
-import { renderHome, renderTimeline, renderAccommodations, renderDocuments, renderInfo, renderWeather } from './ui.js';
+import { renderHome, renderTimeline, renderAccommodations, renderDocuments, renderInfo, renderWeather } from './ui.js?v=4';
 
 const VIEWS = {
   home:          renderHome,
