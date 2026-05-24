@@ -198,6 +198,8 @@ nav.bottom-nav {
 .timeline-desc  { font-size: 14px; line-height: 1.5; color: var(--text); }
 .timeline-highlights { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .highlight-chip { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; font-size: 12px; text-decoration: none; color: var(--navy); }
+.timeline-tickets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.ticket-chip { background: #fff8e1; border: 1px solid var(--gold); border-radius: 20px; padding: 4px 10px; font-size: 12px; color: #7d5a00; cursor: pointer; font-family: var(--font-b); }
 .timeline-acc { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-2); }
 .acc-label { font-weight: 600; color: var(--navy); }
 
@@ -244,6 +246,16 @@ nav.bottom-nav {
 .info-table td:first-child { color: var(--text-2); width: 110px; }
 .install-list { margin: 12px 0; padding-left: 0; display: flex; flex-direction: column; gap: 8px; }
 .install-list li { font-size: 14px; padding-left: 4px; }
+
+/* ── Currency Widget ───────────────────────────────────────────────────── */
+.currency-widget { display: flex; align-items: center; gap: 10px; padding: 16px 20px; flex-wrap: wrap; }
+.currency-flag { font-size: 22px; }
+.currency-input { width: 100px; padding: 8px 10px; border: 2px solid var(--navy); border-radius: 8px; font-size: 18px; font-weight: 700; font-family: var(--font-h); color: var(--navy); text-align: right; -moz-appearance: textfield; }
+.currency-input::-webkit-outer-spin-button,
+.currency-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+.currency-eq { font-size: 20px; color: var(--text-2); }
+.currency-result { font-size: 22px; font-weight: 700; font-family: var(--font-h); color: var(--gold); min-width: 110px; }
+.currency-rate-label { font-size: 11px; color: var(--text-2); width: 100%; margin-top: -6px; padding-left: 2px; }
 
 /* ── Weather ───────────────────────────────────────────────────────────── */
 .view-weather { padding-bottom: 24px; }

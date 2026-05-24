@@ -8,7 +8,12 @@
       "Bash(cp \"booking.pinecone.pdf\" \"docs/hotel-pinecone.pdf\")",
       "mcp__Claude_Preview__preview_start",
       "PowerShell(\\(Get-Command npx -ErrorAction SilentlyContinue\\).Source; \\(Get-Command node -ErrorAction SilentlyContinue\\).Source)",
-      "Bash(ls \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\\\\pass\"* 2>/dev/null || ls \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\\\\\" | grep -i pass)"
+      "Bash(ls \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\\\\pass\"* 2>/dev/null || ls \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\\\\\" | grep -i pass)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\rober\\\\Claude Code\\\\kanada\" | Where-Object { $_.LastWriteTime -gt \\(Get-Date\\).AddHours\\(-3\\) } | Select-Object Name, Length, LastWriteTime)",
+      "Bash(powershell -Command ' *)",
+      "Bash(cd /tmp)",
+      "Bash(python3)"
     ]
   }
 }

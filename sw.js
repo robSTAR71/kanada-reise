@@ -1,4 +1,4 @@
-const CACHE = 'kanada-trip-v2';
+const CACHE = 'kanada-trip-v3';
 
 const PRECACHE = [
   './',
@@ -25,6 +25,10 @@ const PRECACHE = [
   './docs/pass-robert.jpg',
   './docs/pass-edith.jpg',
   './docs/pass-pia.jpg',
+  './docs/zug-montreal-quebec-robert.pdf',
+  './docs/zug-montreal-quebec-edith.pdf',
+  './docs/zug-montreal-quebec-pia.pdf',
+  './js/currency.js',
 ];
 
 self.addEventListener('install', event => {

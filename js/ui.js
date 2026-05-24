@@ -2,6 +2,7 @@ import { TRIP } from './data.js';
 import { renderCountdown } from './countdown.js';
 import { openPDF } from './pdfviewer.js';
 import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js';
+import { renderCurrencyWidget } from './currency.js';
 
 const DAY_ICONS = {
   flight:  '✈️',
@@ -9,6 +10,7 @@ const DAY_ICONS = {
   ferry:   '⛴️',
   explore: '🗺️',
   arrive:  '🏠',
+  train:   '🚆',
 };
 
 const MONTHS_DE = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
@@ -39,6 +41,7 @@ export function renderHome() {
     </div>
     <div class="home-body">
       <div id="countdown" class="countdown-box card"></div>
+      <div id="currency-widget" class="card"></div>
       <div class="route-card card">
         <h2 class="card-title">Unsere Route</h2>
         <ol class="route-list">
@@ -59,6 +62,7 @@ export function renderHome() {
       </div>
     </div>`;
   renderCountdown(el.querySelector('#countdown'));
+  renderCurrencyWidget(el.querySelector('#currency-widget'));
   return el;
 }
 
@@ -91,8 +95,12 @@ export function renderTimeline() {
         <p class="timeline-location">📍 ${day.location}</p>
         <p class="timeline-desc">${day.description}</p>
         ${day.highlights.length ? `<div class="timeline-highlights">${day.highlights.map(h => `<a href="${h.mapsUrl}" target="_blank" rel="noopener" class="highlight-chip">🗺️ ${h.name}</a>`).join('')}</div>` : ''}
+        ${day.tickets?.length ? `<div class="timeline-tickets">${day.tickets.map(t => `<button class="highlight-chip ticket-chip" data-pdf="${t.file}" data-label="${t.label}">🎫 ${t.label}</button>`).join('')}</div>` : ''}
         ${acc ? `<div class="timeline-acc"><span class="acc-label">🏨 ${acc.name}</span> · Check-in: ${acc.checkIn.split(' ')[1]}</div>` : ''}
       </div>`;
+    li.querySelectorAll('.ticket-chip').forEach(btn => {
+      btn.addEventListener('click', e => openPDF(e.currentTarget.dataset.pdf, e.currentTarget.dataset.label));
+    });
     timeline.appendChild(li);
   });
 
