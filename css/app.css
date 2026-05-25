@@ -110,18 +110,6 @@ nav.bottom-nav {
 .btn-sm { padding: 7px 12px; font-size: 13px; }
 .mt-8 { margin-top: 8px; }
 
-/* ── Install Banner ────────────────────────────────────────────────────── */
-#install-banner {
-  background: var(--gold);
-  color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  font-size: 13px;
-  gap: 8px;
-}
-#install-banner p { flex: 1; }
 
 /* ── Home ──────────────────────────────────────────────────────────────── */
 .hero {

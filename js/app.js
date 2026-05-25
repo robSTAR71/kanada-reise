@@ -45,31 +45,5 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('./sw.js').catch(console.error);
 }
 
-// PWA Install prompt
-let deferredPrompt = null;
-const installBanner = document.getElementById('install-banner');
-const installBtn    = document.getElementById('install-btn');
-const installDismiss = document.getElementById('install-dismiss');
-
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  if (installBanner) installBanner.hidden = false;
-});
-
-if (installBtn) {
-  installBtn.addEventListener('click', () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(() => {
-      deferredPrompt = null;
-      if (installBanner) installBanner.hidden = true;
-    });
-  });
-}
-
-if (installDismiss) {
-  installDismiss.addEventListener('click', () => {
-    if (installBanner) installBanner.hidden = true;
-  });
-}
+// PWA Install — suppress browser prompt (install instructions in Info tab)
+window.addEventListener('beforeinstallprompt', e => e.preventDefault());
