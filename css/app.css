@@ -301,21 +301,32 @@ nav.bottom-nav {
 .fc-min { font-size: 11px; color: var(--text-2); }
 .fc-rain { font-size: 10px; color: #2980b9; min-height: 14px; }
 
-/* ── PDF Dialog ────────────────────────────────────────────────────────── */
-dialog#pdf-dialog {
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  max-height: 100%;
-  margin: 0;
+/* ── PDF Overlay ───────────────────────────────────────────────────────── */
+#pdf-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 -4px 32px rgba(0,0,0,0.25);
+  background: #fff;
 }
-dialog#pdf-dialog::backdrop { background: rgba(0,0,0,0.5); }
+#pdf-overlay[hidden] { display: none; }
+
+#pdf-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+.pdf-content-frame {
+  flex: 1; border: none; width: 100%; height: 100%;
+}
+.pdf-content-img {
+  flex: 1; width: 100%; height: 100%;
+  object-fit: contain; background: #111;
+}
+
 .pdf-dialog-header {
   display: flex; align-items: center; gap: 8px;
   padding-top: env(safe-area-inset-top, 0px);
@@ -335,6 +346,7 @@ dialog#pdf-dialog::backdrop { background: rgba(0,0,0,0.5); }
   padding-top: env(safe-area-inset-top, 0px);
   cursor: pointer; flex-shrink: 0;
   border-right: 1px solid rgba(255,255,255,0.15);
+  -webkit-tap-highlight-color: rgba(255,255,255,0.2);
   transition: background 0.15s;
 }
 .pdf-back-btn:active { background: rgba(255,255,255,0.25); }
@@ -346,7 +358,5 @@ dialog#pdf-dialog::backdrop { background: rgba(0,0,0,0.5); }
 .pdf-dl-btn {
   flex-shrink: 0; font-size: 20px; color: rgba(255,255,255,0.75);
   text-decoration: none; padding: 4px 8px;
-  transition: color 0.15s;
 }
 .pdf-dl-btn:hover { color: #fff; }
-#pdf-frame { flex: 1; border: none; width: 100%; }
