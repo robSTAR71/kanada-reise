@@ -1,4 +1,4 @@
-const CACHE = 'kanada-trip-v4';
+const CACHE = 'kanada-trip-v5';
 
 const PRECACHE = [
   './',
@@ -30,6 +30,11 @@ const PRECACHE = [
   './docs/zug-montreal-quebec-edith.pdf',
   './docs/zug-montreal-quebec-pia.pdf',
   './js/currency.js',
+  './js/map.js',
+  './lib/leaflet.js',
+  './lib/leaflet.css',
+  './lib/images/marker-icon.png',
+  './lib/images/marker-shadow.png',
 ];
 
 self.addEventListener('install', event => {

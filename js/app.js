@@ -1,4 +1,5 @@
-import { renderHome, renderTimeline, renderAccommodations, renderDocuments, renderInfo, renderWeather } from './ui.js?v=4';
+import { renderHome, renderTimeline, renderAccommodations, renderDocuments, renderInfo, renderWeather } from './ui.js?v=5';
+import { renderMap } from './map.js?v=5';
 
 const VIEWS = {
   home:          renderHome,
@@ -6,6 +7,7 @@ const VIEWS = {
   unterkuenfte:  renderAccommodations,
   dokumente:     renderDocuments,
   wetter:        renderWeather,
+  karte:         renderMap,
   info:          renderInfo,
 };
 
