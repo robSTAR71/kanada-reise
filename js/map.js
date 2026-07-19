@@ -1,3 +1,81 @@
+// Cabot Trail hikes on Cape Breton Island
+// difficulty: 'leicht' | 'leicht-moderat' | 'moderat' | 'anspruchsvoll'
+const TRAILS = [
+  {
+    name: "Skyline Trail",
+    km: "9 km (Rundweg)", difficulty: "leicht-moderat",
+    lat: 46.682, lon: -60.764,
+    desc: "Holzstege über Hochland-Tundra zu spektakulären Klippen mit Blick auf den Golf von St. Lawrence. Berühmtester Trail der Insel.",
+  },
+  {
+    name: "Franey Mountain",
+    km: "7,5 km (Rundweg)", difficulty: "anspruchsvoll",
+    lat: 46.625, lon: -60.402,
+    desc: "Steiler Aufstieg mit der besten Rundumsicht auf Cape Breton — Ozean, Wälder und Täler.",
+  },
+  {
+    name: "Middle Head Trail",
+    km: "4 km (Rundweg)", difficulty: "leicht",
+    lat: 46.634, lon: -60.370,
+    desc: "Kurzer Küstenweg auf einer Halbinsel bei Ingonish. Perfekt für Familien und Sonnenaufgangswanderungen.",
+  },
+  {
+    name: "Fishing Cove Trail",
+    km: "12 km (Hin & zurück)", difficulty: "anspruchsvoll",
+    lat: 46.752, lon: -60.853,
+    desc: "Backcountry-Trail zu einer abgelegenen Bucht mit Kiesstrand. Übernachtungsmöglichkeiten vorhanden.",
+  },
+  {
+    name: "Pollett's Cove & Aspy Fault",
+    km: "10–14 km (Hin & zurück)", difficulty: "anspruchsvoll",
+    lat: 46.880, lon: -60.618,
+    desc: "Wilder, abgelegener Trail entlang dramatischer Küste. Bekannt für steile Abschnitte und wilde Pferde.",
+  },
+  {
+    name: "Blueberry Mountain",
+    km: "8 km (Rundweg)", difficulty: "moderat",
+    lat: 46.418, lon: -61.055,
+    desc: "Weniger bekannt, aber ähnliche Aussichten wie der Skyline Trail — und deutlich weniger besucht.",
+  },
+  {
+    name: "Acadian Trail",
+    km: "6 km (Rundweg)", difficulty: "moderat",
+    lat: 46.620, lon: -60.982,
+    desc: "Schöner Mix aus Waldwegen und Panoramaaussichten. Gute Alternative zum Skyline Trail.",
+  },
+  {
+    name: "Cape Mabou Highlands",
+    km: "5–10 km (Rundweg)", difficulty: "leicht-moderat",
+    lat: 46.118, lon: -61.420,
+    desc: "Abwechslungsreiche Küsten- und Hochlandwanderungen mit weniger Touristen. Besonders schön bei Sonnenuntergang.",
+  },
+  {
+    name: "Beulah Brook Trail",
+    km: "3,5 km (Rundweg)", difficulty: "leicht",
+    lat: 46.112, lon: -60.852,
+    desc: "Wunderschöner Wasserfall-Trail durch dichten Wald. Perfekt für eine kurze Pause unterwegs.",
+  },
+  {
+    name: "Victoria Park Trail",
+    km: "2,6 km (Rundweg)", difficulty: "leicht",
+    lat: 46.104, lon: -60.748,
+    desc: "Direkt in Baddeck — tolle Aussicht auf den Bras d'Or Lake. Ideal zum Aufwärmen oder für den Abend.",
+  },
+];
+
+const DIFFICULTY_COLOR = {
+  'leicht':          '#388e3c',
+  'leicht-moderat':  '#7cb342',
+  'moderat':         '#f57c00',
+  'anspruchsvoll':   '#c62828',
+};
+const DIFFICULTY_LABEL = {
+  'leicht':          'Leicht',
+  'leicht-moderat':  'Leicht–Moderat',
+  'moderat':         'Moderat',
+  'anspruchsvoll':   'Anspruchsvoll',
+};
+
 // Route stops in order with all metadata
 const ROUTE = [
   {
@@ -92,15 +170,27 @@ export function renderMap() {
       <h1>Reiseroute</h1>
       <p class="view-sub">Interaktive Karte — benötigt Internetverbindung</p>
     </div>
+    <div class="map-toolbar">
+      <button id="trail-toggle" class="trail-toggle-btn trail-on" aria-pressed="true">
+        🥾 Trails einblenden
+      </button>
+    </div>
     <div id="map-container">
       <div id="leaflet-map"></div>
       <div class="map-legend card">
+        <div class="legend-section-title">Reiseroute</div>
         <div class="legend-row"><span class="legend-line solid"></span> Fahrt / Zug</div>
         <div class="legend-row"><span class="legend-line dashed"></span> Fähre</div>
         ${ROUTE.filter(s => s.type === 'stop').map(s => `
           <div class="legend-row">
             <span class="legend-dot" style="background:${s.color}">${s.icon}</span>
             <span>${s.label} <small>(${s.dates})</small></span>
+          </div>`).join('')}
+        <div class="legend-section-title" style="margin-top:10px">Cabot Trail Hikes</div>
+        ${Object.entries(DIFFICULTY_LABEL).map(([k, v]) => `
+          <div class="legend-row">
+            <span class="legend-trail-dot" style="background:${DIFFICULTY_COLOR[k]}">🥾</span>
+            <span>${v}</span>
           </div>`).join('')}
       </div>
     </div>`;
@@ -168,7 +258,44 @@ function initMap(el) {
       .bindPopup(`<div class="map-popup"><div class="map-popup-title">${s.label}</div><div class="map-popup-note">${s.note}</div></div>`);
   });
 
-  // Fit map to all markers
+  // Trail markers layer
+  const trailLayer = L.layerGroup();
+  TRAILS.forEach(trail => {
+    const color = DIFFICULTY_COLOR[trail.difficulty] || '#555';
+    const html = `<div class="map-trail-marker" style="background:${color}">🥾</div>`;
+    const icon = L.divIcon({ html, className: '', iconSize: [30, 30], iconAnchor: [15, 15] });
+    const marker = L.marker([trail.lat, trail.lon], { icon });
+    marker.bindPopup(`
+      <div class="map-popup">
+        <div class="map-popup-title">🥾 ${trail.name}</div>
+        <div class="map-popup-dates">
+          📏 ${trail.km} &nbsp;·&nbsp;
+          <span style="color:${color};font-weight:600">${DIFFICULTY_LABEL[trail.difficulty]}</span>
+        </div>
+        <div class="map-popup-note">${trail.desc}</div>
+      </div>`, { maxWidth: 240 });
+    trailLayer.addLayer(marker);
+  });
+  trailLayer.addTo(map);
+
+  // Trail toggle button
+  const toggleBtn = el.querySelector('#trail-toggle');
+  let trailsVisible = true;
+  toggleBtn.addEventListener('click', () => {
+    trailsVisible = !trailsVisible;
+    if (trailsVisible) {
+      trailLayer.addTo(map);
+      toggleBtn.classList.add('trail-on');
+      toggleBtn.textContent = '🥾 Trails einblenden';
+    } else {
+      map.removeLayer(trailLayer);
+      toggleBtn.classList.remove('trail-on');
+      toggleBtn.textContent = '🥾 Trails ausblenden';
+    }
+    toggleBtn.setAttribute('aria-pressed', String(trailsVisible));
+  });
+
+  // Fit map to route
   const allCoords = ROUTE.map(s => [s.lat, s.lon]);
   map.fitBounds(L.latLngBounds(allCoords).pad(0.15));
 }
