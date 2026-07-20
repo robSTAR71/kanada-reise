@@ -108,14 +108,14 @@ const ROUTE = [
   },
   // Ferry: Wood Islands PEI → Caribou NS (shown as dashed line)
   {
-    day: 7, label: "Fähre: Wood Islands → Caribou", dates: "7. August, 11:45",
+    day: 9, label: "Fähre: Wood Islands → Caribou", dates: "9. August, 11:45",
     lat: 45.952, lon: -62.748,
     icon: "⛴️", color: "#2471a3",
-    note: "BAY Ferries · Buchung 2460692 · 3 Erw. + Auto",
+    note: "BAY Ferries · Buchung 2537003 · 3 Erw. + Auto",
     type: "ferry-start",
   },
   {
-    day: 7, label: "Caribou, NS", dates: "7. August",
+    day: 9, label: "Caribou, NS", dates: "9. August",
     lat: 45.747, lon: -62.681,
     icon: "⛴️", color: "#2471a3",
     note: "Fährankunft Festland",

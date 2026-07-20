@@ -268,17 +268,13 @@ export const TRIP = {
     },
     {
       date: "2026-08-07", day: 7,
-      title: "Sussex → Fähre → Cornwall PEI",
+      title: "Sussex → Cornwall PEI",
       location: "Cornwall, PEI",
-      type: "ferry",
-      description: "Check-out bis 11:00. Fahrt nach Wood Islands (~1,5 Std.). Fähre 11:45 Wood Islands → Caribou NS (BAY Ferries, Buchung 2460692). 3 Erw. + Auto, CAD 45,50 bezahlt. Ankunft Caribou, weiter nach Cornwall PEI. Check-in Chez Nous ab 15:00.",
+      type: "drive",
+      description: "Check-out bis 11:00. Fahrt über Confederation Bridge nach PEI (~2 Std.). Check-in Chez Nous ab 15:00.",
       accommodation: "cornwall",
-      tickets: [
-        { label: "Fähre Wood Islands → Caribou", file: "docs/faehre-pei-nova-scotia.pdf" },
-      ],
       highlights: [
-        { name: "Wood Islands Ferry Terminal", mapsUrl: "https://maps.google.com/?q=Wood+Islands+Ferry+Terminal+PEI" },
-        { name: "Caribou Ferry Terminal", mapsUrl: "https://maps.google.com/?q=Caribou+Ferry+Terminal+Nova+Scotia" },
+        { name: "Confederation Bridge", mapsUrl: "https://maps.google.com/?q=Confederation+Bridge+PEI" },
         { name: "Cavendish Beach", mapsUrl: "https://maps.google.com/?q=Cavendish+Beach+PEI" },
       ],
     },
@@ -296,12 +292,17 @@ export const TRIP = {
     },
     {
       date: "2026-08-09", day: 9,
-      title: "Cornwall → Baddeck NS",
+      title: "Cornwall → Fähre → Baddeck NS",
       location: "Baddeck, NS",
-      type: "drive",
-      description: "Frühzeitiger Check-out (07:00–11:00). Fähre zurück oder Causeway. Fahrt nach Baddeck (~3,5 Std.). Check-in Trailsman Lodge ab 16:00.",
+      type: "ferry",
+      description: "Check-out 07:00–11:00. Fahrt nach Wood Islands (~45 Min.). Fähre 11:45 Wood Islands → Caribou NS (BAY Ferries, Buchung 2537003). 3 Erw. + Auto, CAD 45,50 bezahlt. Weiter nach Baddeck (~2 Std.). Check-in Trailsman Lodge ab 16:00.",
       accommodation: "baddeck",
+      tickets: [
+        { label: "Fähre Wood Islands → Caribou", file: "docs/faehre-pei-nova-scotia.pdf" },
+      ],
       highlights: [
+        { name: "Wood Islands Ferry Terminal", mapsUrl: "https://maps.google.com/?q=Wood+Islands+Ferry+Terminal+PEI" },
+        { name: "Caribou Ferry Terminal", mapsUrl: "https://maps.google.com/?q=Caribou+Ferry+Terminal+Nova+Scotia" },
         { name: "Canso Causeway", mapsUrl: "https://maps.google.com/?q=Canso+Causeway+Nova+Scotia" },
       ],
     },
