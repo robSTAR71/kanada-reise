@@ -30,19 +30,40 @@ export function renderCurrencyWidget(container) {
       <span id="eur-result" class="currency-result">…</span>
       <span class="currency-flag">🇪🇺</span>
       <span id="currency-rate" class="currency-rate-label"></span>
+    </div>
+    <div class="currency-divider"></div>
+    <div class="currency-widget">
+      <span class="currency-flag">🌡️</span>
+      <input id="fahr-input" class="currency-input" type="number" inputmode="decimal"
+             placeholder="°F" step="1" value="72">
+      <span class="currency-eq">=</span>
+      <span id="celsius-result" class="currency-result">…</span>
+      <span class="currency-unit">°C</span>
     </div>`;
 
-  const input  = container.querySelector('#cad-input');
-  const result = container.querySelector('#eur-result');
-  const rateEl = container.querySelector('#currency-rate');
+  // CAD → EUR
+  const cadInput  = container.querySelector('#cad-input');
+  const eurResult = container.querySelector('#eur-result');
+  const rateEl    = container.querySelector('#currency-rate');
 
-  async function update() {
+  async function updateCurrency() {
     const rate = await getRate();
-    const cad  = parseFloat(input.value) || 0;
-    result.textContent = (cad * rate).toFixed(2) + ' EUR';
+    const cad  = parseFloat(cadInput.value) || 0;
+    eurResult.textContent = (cad * rate).toFixed(2) + ' EUR';
     rateEl.textContent = `1 CAD = ${rate.toFixed(4)} EUR`;
   }
+  cadInput.addEventListener('input', updateCurrency);
+  updateCurrency();
 
-  input.addEventListener('input', update);
-  update();
+  // °F → °C
+  const fahrInput    = container.querySelector('#fahr-input');
+  const celsiusResult = container.querySelector('#celsius-result');
+
+  function updateTemp() {
+    const f = parseFloat(fahrInput.value);
+    if (isNaN(f)) { celsiusResult.textContent = '–'; return; }
+    celsiusResult.textContent = ((f - 32) * 5 / 9).toFixed(1);
+  }
+  fahrInput.addEventListener('input', updateTemp);
+  updateTemp();
 }

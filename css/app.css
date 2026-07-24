@@ -279,6 +279,8 @@ nav.bottom-nav {
 .currency-eq { font-size: 20px; color: var(--text-2); }
 .currency-result { font-size: 22px; font-weight: 700; font-family: var(--font-h); color: var(--gold); min-width: 110px; }
 .currency-rate-label { font-size: 11px; color: var(--text-2); width: 100%; margin-top: -6px; padding-left: 2px; }
+.currency-divider { height: 1px; background: var(--border); margin: 0 20px; }
+.currency-unit { font-size: 18px; font-weight: 700; color: var(--text-2); }
 
 /* ── Weather ───────────────────────────────────────────────────────────── */
 .view-weather { padding-bottom: 24px; }
