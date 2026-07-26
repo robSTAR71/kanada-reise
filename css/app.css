@@ -107,6 +107,7 @@ nav.bottom-nav {
 .btn:active { opacity: 0.7; }
 .btn-primary { background: var(--navy); color: #fff; }
 .btn-outline  { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+.btn-map      { background: #e8f5e9; color: #2e7d32; border: 2px solid #a5d6a7; }
 .btn-ghost    { background: transparent; color: var(--text-2); }
 .btn-sm { padding: 7px 12px; font-size: 13px; }
 .mt-8 { margin-top: 8px; }

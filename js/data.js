@@ -68,6 +68,7 @@ export const TRIP = {
       booking: "QFHSHLXW",
       mapsUrl: "https://maps.google.com/?q=Novotel+Montreal+Centre+1180+Rue+de+la+Montagne",
       document: "docs/hotel-montreal.pdf",
+      stadtplan: "docs/stadtplan-montreal.jpg",
       color: "#2d6a9f",
     },
     {
@@ -84,6 +85,7 @@ export const TRIP = {
       pin: "9099",
       mapsUrl: "https://maps.google.com/?q=Delta+Hotels+Quebec+690+Boulevard+René-Lévesque",
       document: "docs/hotel-quebec.pdf",
+      stadtplan: "docs/stadtplan-quebec.jpg",
       color: "#1a5276",
     },
     {
@@ -170,6 +172,8 @@ export const TRIP = {
   ],
 
   documents: [
+    { id: "stadtplan-montreal", label: "Stadtplan Montréal",     icon: "🗺️", file: "docs/stadtplan-montreal.jpg" },
+    { id: "stadtplan-quebec",   label: "Stadtplan Québec City",  icon: "🗺️", file: "docs/stadtplan-quebec.jpg" },
     { id: "flug",      label: "Flüge (AUA/Air Canada)",  icon: "✈️", file: "docs/flug-wien-montreal.pdf" },
     { id: "auto",      label: "Mietwagen (ADAC/Alamo)",  icon: "🚗", file: "docs/mietwagen-adac.pdf" },
     { id: "montreal",  label: "Hotel Montréal",           icon: "🏨", file: "docs/hotel-montreal.pdf" },

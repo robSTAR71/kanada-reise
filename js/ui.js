@@ -159,6 +159,7 @@ export function renderAccommodations() {
         <div class="acc-actions">
           <a href="${acc.mapsUrl}" target="_blank" rel="noopener" class="btn btn-outline">🗺️ In Maps öffnen</a>
           <button class="btn btn-primary" data-pdf="${acc.document}" data-label="${acc.name}">📄 Buchung</button>
+          ${acc.stadtplan ? `<button class="btn btn-map" data-pdf="${acc.stadtplan}" data-label="Stadtplan ${acc.city.split(',')[0]}">🗺️ Stadtplan</button>` : ''}
         </div>
       </div>`;
     card.querySelector('[data-pdf]').addEventListener('click', e => {
