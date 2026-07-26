@@ -1,8 +1,8 @@
-import { TRIP } from './data.js?v=4';
-import { renderCountdown } from './countdown.js?v=4';
-import { openPDF } from './pdfviewer.js?v=4';
-import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js?v=4';
-import { renderCurrencyWidget } from './currency.js?v=4';
+import { TRIP } from './data.js?v=6';
+import { renderCountdown } from './countdown.js?v=6';
+import { openPDF } from './pdfviewer.js?v=6';
+import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js?v=6';
+import { renderCurrencyWidget } from './currency.js?v=6';
 
 const DAY_ICONS = {
   flight:  '✈️',
