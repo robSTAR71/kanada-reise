@@ -162,8 +162,10 @@ export function renderAccommodations() {
           ${acc.stadtplan ? `<button class="btn btn-map" data-pdf="${acc.stadtplan}" data-label="Stadtplan ${acc.city.split(',')[0]}">🗺️ Stadtplan</button>` : ''}
         </div>
       </div>`;
-    card.querySelector('[data-pdf]').addEventListener('click', e => {
-      openPDF(e.currentTarget.dataset.pdf, e.currentTarget.dataset.label);
+    card.querySelectorAll('[data-pdf]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        openPDF(e.currentTarget.dataset.pdf, e.currentTarget.dataset.label);
+      });
     });
     grid.appendChild(card);
   });
