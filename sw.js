@@ -1,4 +1,4 @@
-const CACHE = 'kanada-trip-v13';
+const CACHE = 'kanada-trip-v14';
 
 const PRECACHE = [
   './',
@@ -25,6 +25,7 @@ const PRECACHE = [
   './docs/pass-robert.jpg',
   './docs/pass-edith.jpg',
   './docs/pass-pia.jpg',
+  './docs/bordkarten-hinflug.pdf',
   './docs/stadtplan-montreal.jpg',
   './docs/stadtplan-quebec.jpg',
   './docs/faehre-pei-nova-scotia.pdf',

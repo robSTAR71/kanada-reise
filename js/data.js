@@ -174,7 +174,8 @@ export const TRIP = {
   documents: [
     { id: "stadtplan-montreal", label: "Stadtplan Montréal",     icon: "🗺️", file: "docs/stadtplan-montreal.jpg" },
     { id: "stadtplan-quebec",   label: "Stadtplan Québec City",  icon: "🗺️", file: "docs/stadtplan-quebec.jpg" },
-    { id: "flug",      label: "Flüge (AUA/Air Canada)",  icon: "✈️", file: "docs/flug-wien-montreal.pdf" },
+    { id: "flug",         label: "Flüge (AUA/Air Canada)",       icon: "✈️", file: "docs/flug-wien-montreal.pdf" },
+    { id: "bordkarten",   label: "Bordkarten Hinflug OS 055",    icon: "🎫", file: "docs/bordkarten-hinflug.pdf" },
     { id: "auto",      label: "Mietwagen (ADAC/Alamo)",  icon: "🚗", file: "docs/mietwagen-adac.pdf" },
     { id: "montreal",  label: "Hotel Montréal",           icon: "🏨", file: "docs/hotel-montreal.pdf" },
     { id: "quebec",    label: "Hotel Québec",             icon: "🏨", file: "docs/hotel-quebec.pdf" },
@@ -201,8 +202,11 @@ export const TRIP = {
       title: "Abflug Wien → Montréal",
       location: "Montréal, QC",
       type: "flight",
-      description: "Flug OS 55 ab Wien (11:00), Ankunft Montréal (13:50 Ortszeit). Check-in Novotel ab 15:00. Erster Abend in Montréal!",
+      description: "Flug OS 055 ab Wien T3 (Boarding 10:15, Abflug 11:00), Ankunft Montréal (13:50 Ortszeit). Sitze: Robert 10D · Edith 10G · Pia 10H. Check-in Novotel ab 15:00.",
       accommodation: "montreal",
+      tickets: [
+        { label: "Bordkarten OS 055 – alle 3", file: "docs/bordkarten-hinflug.pdf" },
+      ],
       highlights: [],
     },
     {
