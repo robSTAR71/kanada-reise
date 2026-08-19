@@ -1,8 +1,8 @@
-import { TRIP } from './data.js?v=6';
-import { renderCountdown } from './countdown.js?v=6';
-import { openPDF } from './pdfviewer.js?v=6';
-import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js?v=6';
-import { renderCurrencyWidget } from './currency.js?v=6';
+import { TRIP } from './data.js?v=7';
+import { renderCountdown } from './countdown.js?v=7';
+import { openPDF } from './pdfviewer.js?v=7';
+import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js?v=7';
+import { renderCurrencyWidget } from './currency.js?v=7';
 
 const DAY_ICONS = {
   flight:  '✈️',
@@ -415,14 +415,6 @@ export function renderInfo() {
         <tr><td>Uber Québec City</td><td class="cost-loc">3.–4. Aug.</td><td class="cost-eur">69,64 €</td></tr>
         <tr class="cost-subtotal"><td colspan="2">Transport gesamt</td><td class="cost-eur">168,20 €</td></tr>
 
-        <tr class="cost-cat-header"><td colspan="3">📱 Abos & Sonstiges</td></tr>
-        <tr><td>Apple.com</td><td class="cost-loc">versch.</td><td class="cost-eur">69,98 €</td></tr>
-        <tr><td>OpenAI ChatGPT</td><td class="cost-loc">—</td><td class="cost-eur">20,87 €</td></tr>
-        <tr><td>Anthropic Claude</td><td class="cost-loc">—</td><td class="cost-eur">21,60 €</td></tr>
-        <tr><td>Amazon.de</td><td class="cost-loc">—</td><td class="cost-eur">29,69 €</td></tr>
-        <tr><td>Spotify</td><td class="cost-loc">—</td><td class="cost-eur">12,99 €</td></tr>
-        <tr><td>Google One</td><td class="cost-loc">—</td><td class="cost-eur">1,99 €</td></tr>
-        <tr class="cost-subtotal"><td colspan="2">Abos gesamt</td><td class="cost-eur">157,12 €</td></tr>
 
         <tr class="cost-cat-header"><td colspan="3">💱 Wechselkursgebühren</td></tr>
         <tr><td>Umrechnungsentgelte (CAD/USD)</td><td class="cost-loc">gesamt</td><td class="cost-eur">≈ 35,00 €</td></tr>
@@ -434,9 +426,36 @@ export function renderInfo() {
       </table>
       <div class="cost-total-row">
         <span>Gesamtausgaben (Kreditkarte)</span>
-        <span class="cost-total-amount">4.075,51 €</span>
+        <span class="cost-total-amount">3.918,39 €</span>
       </div>
-      <p class="info-note" style="margin-top:10px">⚠️ Vorausbuchungen (Flüge, Novotel, Zug etc.) sind in dieser Aufstellung nicht enthalten. Noch offen: Alamo-Endabrechnung (Reserviert: 497,54 €).</p>
+    </section>
+
+    <section class="info-section card">
+      <h2 class="info-section-title">💳 Vorausbuchungen</h2>
+      <p class="info-note" style="margin-bottom:12px">Vor Reisebeginn bezahlte Buchungen (nicht in der Kreditkartenabrechnung enthalten)</p>
+      <table class="info-table cost-table">
+        <tr class="cost-cat-header"><td colspan="3">✈️ Flüge</td></tr>
+        <tr><td>Hin- &amp; Rückflug OS 055 / LH 6557</td><td class="cost-loc">3 Personen · Buchung 9RB932</td><td class="cost-eur">4.208,73 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Summe Flüge</td><td class="cost-eur">4.208,73 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">🚗 Mietwagen</td></tr>
+        <tr><td>Alamo / ADAC Ford Escape AWD</td><td class="cost-loc">Québec → Halifax · Buchung 20237222/01</td><td class="cost-eur">1.255,11 €</td></tr>
+        <tr><td class="cost-note" colspan="2"><em>Einweggebühr vor Ort: EUR 185,15 + Steuern</em></td><td></td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Summe Mietwagen (Vorauszahlung)</td><td class="cost-eur">1.255,11 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">🏨 Hotel (vorausbezahlt)</td></tr>
+        <tr><td>Novotel Montréal Centre</td><td class="cost-loc">1.–3. August · 2 Nächte · Buchung QFHSHLXW</td><td class="cost-eur">691,69 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Summe Hotels (Vorauszahlung)</td><td class="cost-eur">691,69 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">🚆 Bahn</td></tr>
+        <tr><td>VIA Rail Montréal → Québec, Zug #24</td><td class="cost-loc">3 Personen · Buchung JW4PCM · 3. August</td><td class="cost-eur">CA$ 288,06</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Summe Bahn</td><td class="cost-eur">CA$ 288,06</td></tr>
+      </table>
+      <div class="cost-total-row">
+        <span>Gesamt Vorausbuchungen (EUR-Positionen)</span>
+        <span class="cost-total-amount">6.155,53 €</span>
+      </div>
+      <p class="info-note" style="margin-top:10px">+ VIA Rail CA$ 288,06 (≈ EUR 190) · Noch offen: Einweggebühr Mietwagen EUR 185,15 + Steuern (vor Ort bei Alamo)</p>
     </section>
 
     <section class="info-section card">
