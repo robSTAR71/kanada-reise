@@ -351,6 +351,95 @@ export function renderInfo() {
     </section>
 
     <section class="info-section card">
+      <h2 class="info-section-title">💶 Reisekosten-Übersicht</h2>
+      <p class="info-note" style="margin-bottom:12px">Kreditkarte 31.07.–18.08.2026 · nur Reiseausgaben (ohne Vorausbuchungen)</p>
+      <table class="info-table cost-table">
+        <tr class="cost-cat-header"><td colspan="3">🏨 Unterkunft</td></tr>
+        <tr><td>Trailsman Lodge, Baddeck</td><td class="cost-loc">Cape Breton</td><td class="cost-eur">380,84 €</td></tr>
+        <tr><td>Chateau Bedford, Halifax</td><td class="cost-loc">Halifax</td><td class="cost-eur">439,31 €</td></tr>
+        <tr><td>Unterkunft via Booking.com</td><td class="cost-loc">12. Aug.</td><td class="cost-eur">450,11 €</td></tr>
+        <tr><td>Unterkunft via Booking.com</td><td class="cost-loc">3. Aug.</td><td class="cost-eur">107,34 €</td></tr>
+        <tr><td>614319 NB Ltd.</td><td class="cost-loc">Woodstock NB</td><td class="cost-eur">206,11 €</td></tr>
+        <tr><td>Edelweiss Online</td><td class="cost-loc">Middleton NS</td><td class="cost-eur">217,52 €</td></tr>
+        <tr><td>Delta Québec City (Extras)</td><td class="cost-loc">Québec</td><td class="cost-eur">35,32 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Unterkunft gesamt</td><td class="cost-eur">1.836,55 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">🚗 Mietwagen</td></tr>
+        <tr><td>Alamo Canada (Abrechnung)</td><td class="cost-loc">Québec</td><td class="cost-eur">254,91 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Mietwagen gesamt</td><td class="cost-eur">254,91 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">⛽ Tanken</td></tr>
+        <tr><td>Petro-Canada Saint John</td><td class="cost-loc">6. Aug.</td><td class="cost-eur">60,70 €</td></tr>
+        <tr><td>Shell North River</td><td class="cost-loc">9. Aug.</td><td class="cost-eur">55,69 €</td></tr>
+        <tr><td>Esso Bridgetown</td><td class="cost-loc">13. Aug.</td><td class="cost-eur">53,45 €</td></tr>
+        <tr><td>Petro-Canada Halifax</td><td class="cost-loc">16. Aug.</td><td class="cost-eur">41,81 €</td></tr>
+        <tr><td>Ultramar Wagmatcook</td><td class="cost-loc">9. Aug.</td><td class="cost-eur">22,97 €</td></tr>
+        <tr><td>Ultramar Valley</td><td class="cost-loc">12. Aug.</td><td class="cost-eur">16,82 €</td></tr>
+        <tr><td>Petro-Canada St-Léonard</td><td class="cost-loc">5. Aug.</td><td class="cost-eur">7,79 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Tanken gesamt</td><td class="cost-eur">259,23 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">🍽️ Restaurants & Essen</td></tr>
+        <tr><td>Brewskey</td><td class="cost-loc">Montréal</td><td class="cost-eur">55,44 €</td></tr>
+        <tr><td>Cirque du Soleil (Abend)</td><td class="cost-loc">Montréal</td><td class="cost-eur">—</td></tr>
+        <tr><td>Piazzetta St-Jean</td><td class="cost-loc">Québec</td><td class="cost-eur">88,95 €</td></tr>
+        <tr><td>Au Petit Chalet</td><td class="cost-loc">Québec</td><td class="cost-eur">64,07 €</td></tr>
+        <tr><td>Côte-Est</td><td class="cost-loc">Kamouraska</td><td class="cost-eur">51,92 €</td></tr>
+        <tr><td>The Cork & Cast</td><td class="cost-loc">Charlottetown</td><td class="cost-eur">75,89 €</td></tr>
+        <tr><td>Sam's Restaurant</td><td class="cost-loc">Cornwall PEI</td><td class="cost-eur">49,55 €</td></tr>
+        <tr><td>Nook & Cranny</td><td class="cost-loc">Pictou NS</td><td class="cost-eur">58,86 €</td></tr>
+        <tr><td>Main Street Restaurant</td><td class="cost-loc">Ingonish</td><td class="cost-eur">85,55 €</td></tr>
+        <tr><td>Rose's Smash Burger</td><td class="cost-loc">Baddeck</td><td class="cost-eur">49,78 €</td></tr>
+        <tr><td>Big Spruce Brewing</td><td class="cost-loc">Baddeck</td><td class="cost-eur">15,89 €</td></tr>
+        <tr><td>Mira Ferry Market</td><td class="cost-loc">Albert Bridge</td><td class="cost-eur">63,14 €</td></tr>
+        <tr><td>Edelweiss Restaurant</td><td class="cost-loc">Middleton NS</td><td class="cost-eur">140,87 €</td></tr>
+        <tr><td>Luckett Vineyards</td><td class="cost-loc">Wallbrook NS</td><td class="cost-eur">38,69 €</td></tr>
+        <tr><td>German Bakery Sachsen</td><td class="cost-loc">Annapolis Royal</td><td class="cost-eur">38,25 €</td></tr>
+        <tr><td>Shaw's Landing</td><td class="cost-loc">Westdover NS</td><td class="cost-eur">95,84 €</td></tr>
+        <tr><td>Black Sheep Restaurant</td><td class="cost-loc">Halifax</td><td class="cost-eur">98,92 €</td></tr>
+        <tr><td>Supermärkte (Sobeys etc.)</td><td class="cost-loc">versch.</td><td class="cost-eur">133,96 €</td></tr>
+        <tr><td>Sonstiges Essen</td><td class="cost-loc">versch.</td><td class="cost-eur">57,54 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Essen & Trinken gesamt</td><td class="cost-eur">1.163,11 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">🎭 Erlebnisse & Ausflüge</td></tr>
+        <tr><td>Cirque du Soleil</td><td class="cost-loc">Montréal</td><td class="cost-eur">166,15 €</td></tr>
+        <tr><td>Pointe-à-Callière Museum</td><td class="cost-loc">Montréal</td><td class="cost-eur">37,34 €</td></tr>
+        <tr><td>Musée Royal 22e Régiment</td><td class="cost-loc">Québec</td><td class="cost-eur">32,20 €</td></tr>
+        <tr><td>Funiculaire Vieux-Québec</td><td class="cost-loc">Québec</td><td class="cost-eur">13,01 €</td></tr>
+        <tr><td>Kings Landing Historical Village</td><td class="cost-loc">NB</td><td class="cost-eur">24,17 €</td></tr>
+        <tr><td>Ambassatours Gray Line</td><td class="cost-loc">Halifax</td><td class="cost-eur">136,44 €</td></tr>
+        <tr><td>Maritime Museum of the Atlantic</td><td class="cost-loc">Halifax</td><td class="cost-eur">13,72 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Erlebnisse gesamt</td><td class="cost-eur">423,03 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">🚖 Uber & Transport</td></tr>
+        <tr><td>Uber Montréal</td><td class="cost-loc">1.–2. Aug.</td><td class="cost-eur">98,56 €</td></tr>
+        <tr><td>Uber Québec City</td><td class="cost-loc">3.–4. Aug.</td><td class="cost-eur">69,64 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Transport gesamt</td><td class="cost-eur">168,20 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">📱 Abos & Sonstiges</td></tr>
+        <tr><td>Apple.com</td><td class="cost-loc">versch.</td><td class="cost-eur">69,98 €</td></tr>
+        <tr><td>OpenAI ChatGPT</td><td class="cost-loc">—</td><td class="cost-eur">20,87 €</td></tr>
+        <tr><td>Anthropic Claude</td><td class="cost-loc">—</td><td class="cost-eur">21,60 €</td></tr>
+        <tr><td>Amazon.de</td><td class="cost-loc">—</td><td class="cost-eur">29,69 €</td></tr>
+        <tr><td>Spotify</td><td class="cost-loc">—</td><td class="cost-eur">12,99 €</td></tr>
+        <tr><td>Google One</td><td class="cost-loc">—</td><td class="cost-eur">1,99 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Abos gesamt</td><td class="cost-eur">157,12 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">💱 Wechselkursgebühren</td></tr>
+        <tr><td>Umrechnungsentgelte (CAD/USD)</td><td class="cost-loc">gesamt</td><td class="cost-eur">≈ 35,00 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Gebühren gesamt</td><td class="cost-eur">≈ 35,00 €</td></tr>
+
+        <tr class="cost-cat-header"><td colspan="3">↩️ Erstattungen</td></tr>
+        <tr><td>Fetta Panini Bar (Storno)</td><td class="cost-loc">Mississauga</td><td class="cost-eur credit">− 21,64 €</td></tr>
+        <tr class="cost-subtotal"><td colspan="2">Erstattungen gesamt</td><td class="cost-eur credit">− 21,64 €</td></tr>
+      </table>
+      <div class="cost-total-row">
+        <span>Gesamtausgaben (Kreditkarte)</span>
+        <span class="cost-total-amount">4.075,51 €</span>
+      </div>
+      <p class="info-note" style="margin-top:10px">⚠️ Vorausbuchungen (Flüge, Novotel, Zug etc.) sind in dieser Aufstellung nicht enthalten. Noch offen: Alamo-Endabrechnung (Reserviert: 497,54 €).</p>
+    </section>
+
+    <section class="info-section card">
       <h2 class="info-section-title">📱 App installieren</h2>
       <p>Diese App funktioniert vollständig <strong>ohne Internet</strong> — auch in Kanada.</p>
       <ul class="install-list">

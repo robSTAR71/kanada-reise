@@ -234,6 +234,17 @@ nav.bottom-nav {
 .info-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .info-table td { padding: 7px 4px; border-bottom: 1px solid var(--border); vertical-align: top; }
 .info-table td:first-child { color: var(--text-2); width: 110px; }
+
+/* Cost table */
+.cost-table td:first-child { color: var(--text); width: auto; }
+.cost-cat-header td { background: var(--surface); font-weight: 700; font-size: 13px; color: var(--navy); padding: 10px 4px 6px; border-bottom: 2px solid var(--border); }
+.cost-subtotal td { font-weight: 700; border-top: 1px solid var(--navy); border-bottom: 2px solid var(--navy); background: #f8f6f0; }
+.cost-loc { color: var(--text-2); font-size: 12px; padding-left: 6px !important; }
+.cost-eur { text-align: right; font-family: var(--font-h); white-space: nowrap; }
+.cost-eur.credit { color: #2e7d32; }
+.cost-total-row { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; padding: 14px 4px; border-top: 3px solid var(--navy); }
+.cost-total-row span:first-child { font-weight: 700; font-size: 15px; }
+.cost-total-amount { font-family: var(--font-h); font-size: 22px; font-weight: 700; color: var(--navy); }
 .install-list { margin: 12px 0; padding-left: 0; display: flex; flex-direction: column; gap: 8px; }
 .install-list li { font-size: 14px; padding-left: 4px; }
 
