@@ -1,8 +1,8 @@
-import { TRIP } from './data.js?v=7';
-import { renderCountdown } from './countdown.js?v=7';
-import { openPDF } from './pdfviewer.js?v=7';
-import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js?v=7';
-import { renderCurrencyWidget } from './currency.js?v=7';
+import { TRIP } from './data.js?v=8';
+import { renderCountdown } from './countdown.js?v=8';
+import { openPDF } from './pdfviewer.js?v=8';
+import { fetchWeather, wmoInfo, currentAccommodation } from './weather.js?v=8';
+import { renderCurrencyWidget } from './currency.js?v=8';
 
 const DAY_ICONS = {
   flight:  '✈️',
@@ -51,7 +51,9 @@ export function renderHome() {
           <li>🌊 Sussex NB <span class="route-nights">1 Nacht</span></li>
           <li>🏝️ Cornwall, PEI <span class="route-nights">2 Nächte</span></li>
           <li>⛵ Baddeck, Cape Breton <span class="route-nights">3 Nächte</span></li>
-          <li>🎸 Halifax <span class="route-nights">5 Nächte</span></li>
+          <li>🌿 Middleton, NS <span class="route-nights">1 Nacht</span></li>
+          <li>🏞️ Molega Lake, NS <span class="route-nights">2 Nächte</span></li>
+          <li>🎸 Halifax <span class="route-nights">2 Nächte</span></li>
         </ol>
       </div>
       <div class="info-chips">

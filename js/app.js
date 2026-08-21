@@ -1,5 +1,5 @@
-import { renderHome, renderTimeline, renderAccommodations, renderDocuments, renderInfo, renderWeather } from './ui.js?v=7';
-import { renderMap } from './map.js?v=7';
+import { renderHome, renderTimeline, renderAccommodations, renderDocuments, renderInfo, renderWeather } from './ui.js?v=8';
+import { renderMap } from './map.js?v=8';
 
 const VIEWS = {
   home:          renderHome,
